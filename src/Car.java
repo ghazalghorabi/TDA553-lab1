@@ -7,8 +7,8 @@ public abstract class Car implements Movable {
     private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
-    private int xPos; // startposition x värdet
-    private int yPos; // startposition y värdet
+    protected int xPos; // startposition x värdet
+    protected int yPos; // startposition y värdet
     private Direction currentcardirection; // the car's current direction
 
     public Car(int nrDoors, double enginePower, double currentSpeed, Color color, String modelName, int xPos, int yPos,
@@ -35,7 +35,7 @@ public abstract class Car implements Movable {
         return currentSpeed;
     }
 
-    private void setCurrentSpeed(double currentSpeed) {
+    public void setCurrentSpeed(double currentSpeed) {
         this.currentSpeed = currentSpeed;
     }
 
@@ -65,6 +65,14 @@ public abstract class Car implements Movable {
 
     public int getyPos() {
         return yPos;
+    }
+
+    public void setxPos(int xPos){
+        this.xPos = xPos;
+    }
+
+    public void setyPos(int yPos){
+        this.yPos = yPos;
     }
 
     public void gas(double amount) throws Exception {
