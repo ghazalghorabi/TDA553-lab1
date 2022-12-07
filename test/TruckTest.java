@@ -45,13 +45,14 @@ public class TruckTest {
   public void raiseplatformForScaniaTest() throws Exception{
     Scania scania= new Scania();
     scania.setCurrentSpeed(10);
-
+    scania.openPlatform();
     assertThrows(Exception.class,()-> scania.raiseplatform(scania.getPlatformAngle()));   //vet ej om denna är rätt?
   }
   @Test
   public void lowerPlatformTransporter() throws Exception{
-    CarTransporter carTransporter = new CarTransporter();
+    CarTransporter carTransporter = new CarTransporter(10);
     carTransporter.setCurrentSpeed(10);
+    carTransporter.closePlatform();
     assertThrows(Exception.class,()-> carTransporter.lowerplatform(carTransporter.getPlatformAngle()));
   }
     
