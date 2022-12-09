@@ -50,7 +50,7 @@ public class TruckTest {
   }
   @Test
   public void lowerPlatformTransporter() throws Exception{
-    CarTransporter carTransporter = new CarTransporter(10);
+    CarTransporter carTransporter = new CarTransporter(null, 10);
     carTransporter.setCurrentSpeed(10);
     carTransporter.closePlatform();
     assertThrows(Exception.class,()-> carTransporter.lowerplatform(carTransporter.getPlatformAngle()));

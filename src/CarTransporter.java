@@ -7,15 +7,17 @@ public class CarTransporter extends Truck implements IContent{
     private Stack<Car> loadedCars;
     private double radius;
     private int carAmount;
+
     
 
-    public CarTransporter(Platform platform, Stack<Car> loadedCars, double radius, int carAmount) {
+    public CarTransporter(Stack<Car> loadedCars, double radius) {
         super(2, 110, 0, Color.BLUE, "car transporter", 0, 0, Direction.NORTH);
         
         this.radius = radius;
-        this.carAmount = carAmount;
         this.loadedCars = loadedCars;
-        this.platform = platform;
+        this.platform = new Platform();
+        this.carAmount = 2; //this never changes, changed this to 2 on purpose!
+        
 
         
     }
