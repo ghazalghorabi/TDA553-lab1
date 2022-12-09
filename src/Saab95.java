@@ -7,7 +7,7 @@ public class Saab95 extends Car{
    Turbo t  = new Turbo();
     
     public Saab95(){
-        super(2, 125, 0 ,Color.red, "Saab95", 50, 50, Direction.NORTH);
+        super(2, 125, 0 ,Color.red, "Saab95", 50, 50, Direction.SOUTH);
         //turboOn = false;
         speedFactor();
     }

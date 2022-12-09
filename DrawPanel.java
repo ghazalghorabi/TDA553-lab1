@@ -15,12 +15,12 @@ public class DrawPanel extends JPanel{
     BufferedImage scaniaImage;
 
     // To keep track of a singel cars position
-    Point volvoPoint = new Point();
+    Point volvoPoint = new Point();     //hur kopplar vi de till subklasserna? we should get this information from the model 
     Point saabPoint = new Point();
     Point scaniaPoint = new Point();
 
-    // TODO: Make this genereal for all cars
-    void moveit(int x, int y){
+    // TODO: Make this genereal for all cars 
+    void moveit(int x, int y){ // ska denna vara i car classen? typ använda det vi har i CAR (move + egna x,y)
         volvoPoint.x = x;
         volvoPoint.y = y;
         saabPoint.x = x+50;
@@ -45,9 +45,9 @@ public class DrawPanel extends JPanel{
             volvoImage = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Volvo240.jpg"));
             saabImage = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Saab95.jpg"));
             scaniaImage = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Scania.jpg"));
-        } catch (IOException ex)
-        {
-            ex.printStackTrace();
+        } catch (IOException ex){
+            ex.printStackTrace();   //do we need to change this? what does this? 
+            
         }
 
     }
@@ -55,7 +55,7 @@ public class DrawPanel extends JPanel{
     // This method is called each time the panel updates/refreshes/repaints itself
     // TODO: Change to suit your needs.
     @Override
-    protected void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) { // vi kanske ska ha denna i view??
         super.paintComponent(g);
         g.drawImage(volvoImage, volvoPoint.x, volvoPoint.y, null);
         g.drawImage(saabImage, saabPoint.x, saabPoint.y, null); 
