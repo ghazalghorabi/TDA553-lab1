@@ -1,32 +1,32 @@
 import java.awt.Color;
-import java.util.*; 
+import java.util.*;
 
-public class CarTransporter extends Truck implements IContent{
-    
+public class CarTransporter extends Truck implements IContent {
+
     Platform platform;
     private Stack<Car> loadedCars;
     private double radius;
     private int carAmount;
+    private int unloadAreaX;
+    private int unloadAreaY;
 
-    
-
-    public CarTransporter(Stack<Car> loadedCars, double radius) {
+    public CarTransporter(Stack<Car> loadedCars, double radius, int unloadAreaX, int unloadAreaY) {
         super(2, 110, 0, Color.BLUE, "car transporter", 0, 0, Direction.NORTH);
-        
+
         this.radius = radius;
         this.loadedCars = loadedCars;
         this.platform = new Platform();
-        this.carAmount = 2; //this never changes, changed this to 2 on purpose!
-        
+        this.carAmount = 2; // this never changes, changed this to 2 on purpose!
+        this.unloadAreaX = unloadAreaX;
+        this.unloadAreaY = unloadAreaY;
 
-        
     }
 
-    private void SetCaramount(Car carToLoad){
+    private void SetCaramount(Car carToLoad) {
         loadedCars.push(carToLoad);
     }
-    
-    public int GetCaramount(Stack<Car> loadedCars){
+
+    public int GetCaramount(Stack<Car> loadedCars) {
         return loadedCars.size();
     }
 
@@ -34,11 +34,11 @@ public class CarTransporter extends Truck implements IContent{
         platform.setPlatformAngle(platform.maxAngle);
     }
 
-    public void closePlatform() { 
-        platform.setPlatformAngle(platform.minAngle); 
+    public void closePlatform() {
+        platform.setPlatformAngle(platform.minAngle);
     }
 
-    public void move(Stack<Car> loadcarslist){
+    public void move(Stack<Car> loadcarslist) {
         for (Car car : loadcarslist) {
             car.setxPos(xPos);
             car.setyPos(yPos);
@@ -47,22 +47,22 @@ public class CarTransporter extends Truck implements IContent{
 
     public void loadCars(Car carToLoad) {
         if (platform.getPlatformAngle() == platform.maxAngle && !isObjectfull() && isInDistance(carToLoad)) {
-                   SetCaramount(carToLoad);
-        }
-        else{throw new IllegalArgumentException("Unable to load carTransporter");
+            SetCaramount(carToLoad);
+        } else {
+            throw new IllegalArgumentException("Unable to load carTransporter");
 
         }
     }
-   
+
     @Override
     public int getXPos() {
-        
+
         return xPos;
     }
 
     @Override
     public int getYPos() {
-     
+
         return yPos;
     }
 
@@ -76,12 +76,16 @@ public class CarTransporter extends Truck implements IContent{
         return distance;
     }
 
-    
     @Override
     public void unloadCar() {
-        if (platform.getPlatformAngle() == platform.maxAngle);
-        
+        if (platform.getPlatformAngle() == platform.maxAngle)
+            ;
+        Car carToUnload = loadedCars.pop();
+        carToUnload.xPos = unloadAreaX;
+        carToUnload.yPos = unloadAreaY;
     }
+
+    
 
     @Override
     public boolean isInDistance(Car car) {
@@ -98,3 +102,4 @@ public class CarTransporter extends Truck implements IContent{
         return this.radius;
     }
 }
+

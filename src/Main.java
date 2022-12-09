@@ -8,7 +8,7 @@ public class Main {
         Saab95 car1 = new Saab95();
         Volvo240 car2 = new Volvo240();
         Scania car3 = new Scania();
-        CarTransporter car4 = new CarTransporter(null, 10);
+        CarTransporter car4 = new CarTransporter(null, 10, 0, 0);
 
         cars = new ArrayList<Car>();
 
