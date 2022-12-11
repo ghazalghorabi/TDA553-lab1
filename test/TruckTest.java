@@ -76,21 +76,4 @@ public class TruckTest {
     //100 är start yPos i ny "draw filen"
   }
 
-  @Test
-  public void truck_dont_move_with_platformLowerd_test() throws Exception{
-    Scania scania = new Scania();
-    
-    int yPos = scania.getyPos();
-
-    scania.lowerplatform(10); 
-    scania.gas(1);
-    scania.move(); //should not MOVE so yPos should be the same
-    
-    assertEquals(100, yPos); 
-    //100 är start yPos i ny "draw filen"
-  }
-
-   
-
-
 }
