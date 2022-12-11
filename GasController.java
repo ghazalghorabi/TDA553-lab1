@@ -1,4 +1,3 @@
-package ButtonControllers;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -17,19 +16,15 @@ public class GasController {
     JSpinner gasSpinner = new JSpinner();
 
     public GasController(){
-        
-    }
-    
-
-    private void initialize(){
-    
         gasPanel.setLayout(new BorderLayout()); // draw
         gasPanel.add(gasLabel, BorderLayout.PAGE_START);
         gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
 
         gasPanel.add(gasButton, 0); 
-        
-    }
 
+
+    
+    }
+    
     
 }

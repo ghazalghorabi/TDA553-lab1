@@ -3,13 +3,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+
 /*
 * This class represents the Controller part in the MVC pattern.
 * It's responsibilities is to listen to the View and responds in a appropriate manner by
 * modifying the model state and the updating the view.
  */
 
-public class CarController {
+public class CarController extends CarView {
     // member fields:
 
     public static ArrayList<Car> cars = new ArrayList<>(); //app / main
@@ -26,6 +27,8 @@ public class CarController {
     //cars = new ArrayList<Car>();
 
     //methods:
+    BrakeController brakeController = new BrakeController();
+    GasController gasController = new GasController();
 
     public static void main(String[] args) {
         // Instance of this class
@@ -63,4 +66,36 @@ public class CarController {
             car.gas(amount);
         }
     }
+    //la till: 
+    
+    public void actionListener(){
+        gasController.gasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for(Car cc : carC.cars){ 
+                try {
+                    cc.gas(gasController.gasAmount);  
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+             }
+            }
+        });
+
+
+        brakeController.brakeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                for(Car cc : carC.cars){
+                try {
+                    cc.brake(brakeController.brakeAmount);  
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+             }
+            }
+        });
+    }
+    
+
 }

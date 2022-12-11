@@ -61,4 +61,7 @@ public class DrawPanel extends JPanel{
         g.drawImage(saabImage, saabPoint.x, saabPoint.y, null); 
         g.drawImage(scaniaImage, scaniaPoint.x, scaniaPoint.y, null); // see javadoc for more info on the parameters
     }
+
+
+    
 }
