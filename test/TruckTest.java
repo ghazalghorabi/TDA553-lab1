@@ -66,7 +66,7 @@ public class TruckTest {
   public void truck_dont_move_with_platformRaised_test() throws Exception{
     Scania scania = new Scania();
     
-    int yPos = scania.getyPos();
+    int yPos = scania.getYPos();
 
     scania.raiseplatform(70); 
     scania.gas(1);

@@ -1,7 +1,9 @@
 import java.awt.Color;
 import java.util.*;
 
-public class CarTransporter extends Truck implements IContent {
+public class CarTransporter extends Truck implements IContent, IDistance { //remove implent icontent
+Loading l = new Loading();
+Distance d = new Distance();
 
     Platform platform;
     private Stack<Car> loadedCars;
@@ -67,16 +69,6 @@ public class CarTransporter extends Truck implements IContent {
     }
 
     @Override
-    public double calcDistance(Car car) {
-        int xDif = Math.abs(car.getxPos() - this.xPos); // Using Pythagoras to get DISTANCE from CarShop to car
-        int yDif = Math.abs(car.getyPos() - this.yPos);
-
-        double distance = Math.sqrt((yDif ^ 2) + (xDif ^ 2));
-
-        return distance;
-    }
-
-    @Override
     public void unloadCar() {
         if (platform.getPlatformAngle() == platform.maxAngle)
             ;
@@ -85,21 +77,27 @@ public class CarTransporter extends Truck implements IContent {
         carToUnload.yPos = unloadAreaY;
     }
 
-    
-
-    @Override
     public boolean isInDistance(Car car) {
-        return calcDistance(car) <= this.radius;
+        return d.isInDistance(this, car);
     }
 
-    @Override
     public boolean isObjectfull() {
-        return loadedCars.size() >= carAmount;
+        return l.isObjectfull(this);
     }
 
     @Override
     public double radius() {
         return this.radius;
+    }
+
+    @Override
+    public int amountOfCars() {
+        return loadedCars.size();
+    }
+
+    @Override
+    public int getMaxCarAmount() {
+        return carAmount;
     }
 }
 
