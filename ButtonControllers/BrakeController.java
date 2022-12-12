@@ -6,9 +6,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-    int brakeAmount = 0;
+
 
 
 public class BrakeController {
+    int brakeAmount = 0;
     JButton brakeButton = new JButton("Brake"); //BrakeController
+    
 }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 * modifying the model state and the updating the view.
  */
 
-public class CarController extends CarView {
+public class CarController { // removed extentension carview
     // member fields:
 
     public static ArrayList<Car> cars = new ArrayList<>(); //app / main
@@ -30,7 +30,7 @@ public class CarController extends CarView {
     BrakeController brakeController = new BrakeController();
     GasController gasController = new GasController();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // main should not be in carcontroller
         // Instance of this class
         CarController cc = new CarController();
 
@@ -72,7 +72,7 @@ public class CarController extends CarView {
         gasController.gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for(Car cc : carC.cars){ 
+                for(Car cc : cars){ 
                 try {
                     cc.gas(gasController.gasAmount);  
                 } catch (Exception e1) {
@@ -83,10 +83,11 @@ public class CarController extends CarView {
         });
 
 
+    
         brakeController.brakeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for(Car cc : carC.cars){
+                for(Car cc : cars){
                 try {
                     cc.brake(brakeController.brakeAmount);  
                 } catch (Exception e1) {

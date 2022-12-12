@@ -19,14 +19,11 @@ public Truck(int nrDoors, double enginePower, double currentSpeed, Color color, 
     public void raiseplatform(double platformAngle) throws Exception{
         if (platform.getPlatformAngle()> 0 & getCurrentSpeed()==0){  
             platform.openPlatform();  
-            // om speed = 0, då kan vi raisea
-            // om vi har raisat, då ska vi inte kunna har speed mer än 0
-            
-
-        }else if(getPlatformAngle() == 0 || getCurrentSpeed() > 0){ 
+            }else if(getPlatformAngle() == 0 || getCurrentSpeed() > 0){ 
             throw new Exception("raising the platform is not possible");
         }
     }
+    
     public void lowerplatform(double platformAngle) throws Exception{
         if (platform.getPlatformAngle()< 70 & getCurrentSpeed()==0){ 
             platform.closePlatform();  
