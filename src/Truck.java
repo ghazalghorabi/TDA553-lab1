@@ -27,7 +27,9 @@ public Truck(int nrDoors, double enginePower, double currentSpeed, Color color, 
 
         if (platform.getPlatformAngle()> 0 && getCurrentSpeed()==0){  
             platform.openPlatform(); 
-        }else if(getPlatformAngle() == 0 && getCurrentSpeed() > 0){ 
+        }else if(getPlatformAngle() == 0 && getCurrentSpeed() > 0){
+            throw new Exception("raising the platform is not possible");
+        }
 
     
     }
