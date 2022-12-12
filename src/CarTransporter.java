@@ -1,9 +1,9 @@
 import java.awt.Color;
 import java.util.*;
 
-public class CarTransporter extends Truck implements IContent, IDistance { //remove implent icontent
-Loading l = new Loading();
-Distance d = new Distance();
+public class CarTransporter extends Truck implements IContent, IDistance { // remove implent icontent
+    Loading l = new Loading();
+    Distance d = new Distance();
 
     Platform platform;
     private Stack<Car> loadedCars;
@@ -70,11 +70,12 @@ Distance d = new Distance();
 
     @Override
     public void unloadCar() {
-        if (platform.getPlatformAngle() == platform.maxAngle)
+        if (platform.getPlatformAngle() == platform.maxAngle){
             ;
         Car carToUnload = loadedCars.pop();
         carToUnload.xPos = unloadAreaX;
         carToUnload.yPos = unloadAreaY;
+        }
     }
 
     public boolean isInDistance(Car car) {
@@ -100,4 +101,3 @@ Distance d = new Distance();
         return carAmount;
     }
 }
-
