@@ -1,13 +1,14 @@
  
 1.
-Yes our design has Car as a supertype, Saab extends Car, Trucks also extends Car.    
-And Scania in return is extending Trucks.
-Contract for break and gas works somewhat similar in both cases.
-Except that the trucks have a condition for when they are allowed to gas, their ramp has to be closed. 
-I would say that we follow the Liskov Substitution Principle, just because the Trucks have an “extra condition” 
-does not mean that they break the contract for cars.
-I guess you could say the contract for a Car to gas or brake is easy (since it has no conditions). 
-And that the truck contract is just stronger than the Car contract.
+Our design has Car as a supertype, Volvo extends car and Truck also extends Car. In addition Scania in return is extending Trucks. 
+Contract for brake and gas work somewhat similar in both cases. 
+In Volvo we have the same condition for gas and brake, when we accelerate it calls both the gas and brake function from the car class (which it inherits). 
+Except Scania has a condition for when it's allowed to gas, their platform has to be closed. 
+We try to follow the Liskov Substitution principle but in the case of Scania when the car accelerates, the object for gas does not behave the same as the gas object in the car supertype.
+But in Volvo we follow the Liskov principle where the conditions for both gas and brake are the same as the Car supertype. '
+Because in this case: Volvo is a subtype of Car and the gas object in Volvo is the same as Car, so it means that it satisfies the contract of Car. 
+However, Scania unfortunately doesn't. We inherit the gas object from Car (because as we previously mentioned Truck extends car) but we add additional requirements for the platform. 
+However, to do that we use delegation to reduce code duplication. 
 
 2.
 We created a superclass called Truck to handle duplication of code between Scania and CarTransporter.                                                                                                 
