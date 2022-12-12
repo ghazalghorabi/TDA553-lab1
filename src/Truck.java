@@ -22,13 +22,16 @@ public Truck(int nrDoors, double enginePower, double currentSpeed, Color color, 
         platform.closePlatform(); //delegarar closeplatform till platform; 
     }
 
+    // raiseplatform , gas, move 
     public void raiseplatform(double platformAngle) throws Exception{
+
         if (platform.getPlatformAngle()> 0 && getCurrentSpeed()==0){  
             platform.openPlatform(); 
         }else if(getPlatformAngle() == 0 && getCurrentSpeed() > 0){ 
-            throw new Exception("raising the platform is not possible");
-        }
+
+    
     }
+    
     public void lowerplatform(double platformAngle) throws Exception{
         if (platform.getPlatformAngle()< 70 && getCurrentSpeed()==0){ 
             platform.closePlatform();  
@@ -36,6 +39,8 @@ public Truck(int nrDoors, double enginePower, double currentSpeed, Color color, 
             throw new Exception("lowering the platform is not possible");
         }
     }
+
+
     public double getPlatformAngle() {
         return platform.getPlatformAngle();
     }

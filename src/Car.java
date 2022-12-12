@@ -83,7 +83,7 @@ public abstract class Car implements Movable {
         }
     }
 
-    private void incrementSpeed(double amount) { // the min and max speed interval while gasing
+    public void incrementSpeed(double amount) { // the min and max speed interval while gasing
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower());
     }
 
