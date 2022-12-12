@@ -1,22 +1,26 @@
  
 1.
-Our design has Car as a supertype, Volvo extends car and Truck also extends Car. In addition Scania in return is extending Trucks. 
+Our design has Car as a supertype, Volvo extends car and Truck also extends Car. 
+In addition Scania in return is extending Trucks. 
 Contract for brake and gas work somewhat similar in both cases. 
-In Volvo we have the same condition for gas and brake, when we accelerate it calls both the gas and brake function from the car class (which it inherits). 
+Our contract for gas and brake in Car is that our gas contract has a condition which has to be fulfilled in order for it to work. 
+We can only increment the speed if the interval for amount is between 0 or 1. 
+The same is valid for brakes, the contract there is that we can only decrement the speed if the amount is between 0 or 1. 
+In Volvo we have the same condition for gas and brake, when we accelerate it calls both the gas function from the car class (which it inherits).
 Except Scania has a condition for when it's allowed to gas, their platform has to be closed. 
-We try to follow the Liskov Substitution principle but in the case of Scania when the car accelerates, the object for gas does not behave the same as the gas object in the car supertype.
-But in Volvo we follow the Liskov principle where the conditions for both gas and brake are the same as the Car supertype. '
+We try to follow the Liskov Substitution principle but in the case of Scania when the car accelerates, the object for gas does not behave the same as the gas object in the car supertype. 
+But in Volvo we follow the Liskov principle where the conditions for both gas and brake are the same as the Car supertype. 
 Because in this case: Volvo is a subtype of Car and the gas object in Volvo is the same as Car, so it means that it satisfies the contract of Car. 
 However, Scania unfortunately doesn't. We inherit the gas object from Car (because as we previously mentioned Truck extends car) but we add additional requirements for the platform. 
-However, to do that we use delegation to reduce code duplication. 
+However, to do that we use delegation to reduce code duplication.
 
 2.
 We created a superclass called Truck to handle duplication of code between Scania and CarTransporter.                                                                                                 
 With the CarShop and CarTransporter we could not use the same way since one is a vehicle and the other isn't. 
-Instead we choose to create an interface with the common functions. 
+Instead we choose to create interfaces with the common functions. 
 Our purpose with this was to abstract the code. 
 
 3.
-Yes we needed to modify it quite a bit! In our first version of lab 1 we only used subclassing (since it was the only thing we knew). '
+Yes we needed to modify it quite a bit! In our first version of lab 1 we only used subclassing (since it was the only thing we knew).
 So our code has been on a little journey. In lab 1 we only created Cars and very specific functions for those cars.
 So when we got to lab 2 we had to rethink a lot of things. 
