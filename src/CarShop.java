@@ -1,6 +1,9 @@
 import java.util.Stack;
 
-public class CarShop implements IContent {
+public class CarShop implements IContent, IDistance { //remove IContent
+
+Loading l = new Loading();
+Distance d = new Distance();
 
     private Stack<Car> amountOfCarsInShop; // Stack of loaded cars
     private int x; // X position for carshop
@@ -32,22 +35,7 @@ public class CarShop implements IContent {
         return y;
     }
 
-    @Override
-    public double calcDistance(Car car) {
-        int xDif = Math.abs(car.getxPos() - this.x); // Using Pythagoras to get DISTANCE from CarShop to car
-        int yDif = Math.abs(car.getyPos() - this.y);
 
-        double distance = Math.sqrt((yDif ^ 2) + (xDif ^ 2));
-
-        return distance;
-
-    }
-
-    @Override
-    public boolean isInDistance(Car car) {
-        return calcDistance(car) <= this.radius;
-
-    }
 
     @Override
     public void unloadCar() {
@@ -60,7 +48,7 @@ public class CarShop implements IContent {
     public void loadCars(Car car) {
         // if carshop is not full and car is in reasonable distance, then we CAN load
 
-        if (!isObjectfull() && isInDistance(car)) {
+        if (!isObjectfull() && d.isInDistance(this, car)) {
             car.xPos = this.x;
             car.yPos = this.y;
             amountOfCarsInShop.push(car);
@@ -75,9 +63,16 @@ public class CarShop implements IContent {
         return amountOfCarsInShop.size();
     }
 
-    @Override
+    public int getMaxCarAmount() { // Current amount of cars in shop
+        return carAmount;
+    }
+
+    public boolean isInDistance(Car car) {
+        return d.isInDistance(this, car);
+    }
+
     public boolean isObjectfull() {
-        return amountOfCarsInShop.size() >= carAmount;
+        return l.isObjectfull(this);
     }
 
     @Override

@@ -50,8 +50,8 @@ public class CarController { // removed extentension carview
         public void actionPerformed(ActionEvent e) { //user input (actionlistner "button")
             for (Car car : cars) {
                 car.move();//MODEL
-                int x = (int) Math.round(car.getxPos());//VIEW visar vart bilarna är 
-                int y = (int) Math.round(car.getyPos());
+                int x = (int) Math.round(car.getXPos());//VIEW visar vart bilarna är 
+                int y = (int) Math.round(car.getYPos());
                 frame.drawPanel.moveit(x, y);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();

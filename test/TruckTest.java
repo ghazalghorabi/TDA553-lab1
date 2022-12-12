@@ -1,5 +1,10 @@
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
 import org.junit.Test;
 
 
@@ -50,10 +55,25 @@ public class TruckTest {
   }
   @Test
   public void lowerPlatformTransporter() throws Exception{
-    CarTransporter carTransporter = new CarTransporter(10);
+    CarTransporter carTransporter = new CarTransporter(null, 10, 0, 0);
     carTransporter.setCurrentSpeed(10);
     carTransporter.closePlatform();
     assertThrows(Exception.class,()-> carTransporter.lowerplatform(carTransporter.getPlatformAngle()));
   }
     
+
+  @Test
+  public void truck_dont_move_with_platformRaised_test() throws Exception{
+    Scania scania = new Scania();
+    
+    int yPos = scania.getYPos();
+
+    scania.raiseplatform(70); 
+    scania.gas(1);
+    scania.move(); //should not MOVE so yPos should be the same
+    
+    assertEquals(100, yPos); 
+    //100 är start yPos i ny "draw filen"
+  }
+
 }
