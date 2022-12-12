@@ -15,25 +15,24 @@ public class CarShopTest {
     }
 
     @Test
-    public void how_many_cars_in_shop() {
+    public void loadCar_should_increase_list_test() {
         CarShop carShop = new CarShop(10, 10, 15.0, 2, 15, 15);
-        Car car = new Saab95();
+        Car car = new Volvo240();
 
-        carShop.loadCar(car);
+        carShop.loadCars(car);
 
-        int expectedCarsInShop = 1;
-        int actualCarsInShop = carShop.carsCurrentlyInShop();
+        assertEquals(1, carShop.amountOfCars());
+    }
 
-        assertEquals(expectedCarsInShop, actualCarsInShop); // Testar LOAD
+    @Test
+    public void loadCar_should_decrease_list_test() {
+        CarShop carShop = new CarShop(10, 10, 15.0, 2, 15, 15);
+        Car car = new Volvo240();
 
-        Car actual = carShop.unloadCar();
+        carShop.loadCars(car);
 
-        expectedCarsInShop = 0;
-        actualCarsInShop = carShop.carsCurrentlyInShop();
+        carShop.unloadCar();
 
-        assertEquals(expectedCarsInShop, actualCarsInShop); // Testar UNLOAD
-
-        assertEquals(car, actual); // Test: LOAD then UNLOAD, check if its the same car
-
+        assertEquals(0, carShop.amountOfCars());
     }
 }

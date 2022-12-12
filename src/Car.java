@@ -59,11 +59,11 @@ public abstract class Car implements Movable {
         return modelName;
     }
 
-    public int getxPos() {
+    public int getXPos() {
         return xPos;
     }
 
-    public int getyPos() {
+    public int getYPos() {
         return yPos;
     }
 
@@ -83,7 +83,7 @@ public abstract class Car implements Movable {
         }
     }
 
-    private void incrementSpeed(double amount) { // the min and max speed interval while gasing
+    public void incrementSpeed(double amount) { // the min and max speed interval while gasing
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower());
     }
 

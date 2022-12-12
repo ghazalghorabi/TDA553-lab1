@@ -25,7 +25,7 @@ public class CarTest {
   public void move_NORTH_test(){
     Car car1=new Volvo240();
     car1.move();
-    assertEquals(car1.getyPos(),-1);
+    assertEquals(car1.getYPos(),-1);
   }
 
 
@@ -36,7 +36,7 @@ public class CarTest {
       car1.turnLeft();
     }
     car1.move();
-    assertEquals(car1.getyPos(),1);    
+    assertEquals(car1.getYPos(),1);    
   }
   @Test
   public void move_WEST_test(){
@@ -45,7 +45,7 @@ public class CarTest {
      car1.turnLeft();
    }
    car1.move();
-   assertEquals(car1.getxPos(),1);    
+   assertEquals(car1.getXPos(),1);    
  }
 
  @Test
@@ -55,7 +55,7 @@ public class CarTest {
     car1.turnLeft();
   }
   car1.move();
-  assertEquals(car1.getxPos(),-1);    
+  assertEquals(car1.getXPos(),-1);    
 }
   @Test
   public void turn_left_test(){
