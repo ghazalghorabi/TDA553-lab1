@@ -10,7 +10,7 @@ public Truck(int nrDoors, double enginePower, double currentSpeed, Color color, 
 
     @Override
     public void move(){
-        if(platform.getPlatformAngle() == 0 ){
+        if(platform.getPlatformAngle() == 0 ){ 
             super.move();
         };
     }

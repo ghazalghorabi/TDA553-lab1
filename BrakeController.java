@@ -11,5 +11,4 @@ public class BrakeController {
     int brakeAmount = 0;
     JButton brakeButton = new JButton("Brake"); //BrakeController
     
-
 }
