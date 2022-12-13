@@ -8,7 +8,7 @@ import org.junit.Test;
 
 
 public class CarTest {
-  @Test //testar start direction
+  @Test //testar start direction, TESTET UTGÅR FRÅN ATT BILARNA HAR START DIRECTION NORTH
   public void start_direction_test() {
     Car car1 = new Volvo240();
     Direction expectedDirection1 = Direction.NORTH;
