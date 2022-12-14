@@ -19,9 +19,9 @@ public class Main {
         CarController cc = new CarController();
         
         // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0",cc ,cc , cc); //VIEW
-
-        cc.frame.add(cc);
+        cc.frame = new CarView(cc ,cc , cc); //VIEW
+        
+        
         
         
 

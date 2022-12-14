@@ -20,21 +20,21 @@ public class CarView extends JFrame {
     // vissa saker ska vara kvar ändå för illustration i programmet
     private static final int X = 800;// 800
     private static final int Y = 400;
-	public static JPanel panel;
+    public static JPanel panel;
     public static JPanel stopButton;
-	public static JPanel startButton;
+    public static JPanel startButton;
     DrawPanel drawPanel = new DrawPanel(X, Y - 240);
 
-	//public DrawPanel drawPanel;
+    // public DrawPanel drawPanel;
 
     // Constructor
-    public CarView(String framename, JPanel controlPanel, JPanel startButton, JPanel stopButton) { // ??
-        
+    public CarView(JPanel controlPanel, JPanel startButton, JPanel stopButton) { // ??
+
         this.setTitle("Amazing Pink Cars");
         this.setPreferredSize(new Dimension(X, Y));
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         this.add(drawPanel);
-        
+
         controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200)); // delegera? metod för kodduplicering
         this.add(controlPanel);
 
@@ -47,17 +47,15 @@ public class CarView extends JFrame {
         controlPanel.setBackground(Color.CYAN);// knappbakgrund
         controlPanel.setLayout(new GridLayout(2, 4));
 
-
         startButton.setBackground(Color.green); // Färgens knapp
         startButton.setForeground(Color.BLACK);// färgens text
-       
-    
+
         stopButton.setBackground(Color.red);
         stopButton.setForeground(Color.black);
-        
+
         // This actionListener is for the gas button only!!!
         // TODO: Create more for each component as necessary
-       
+
         // Make the frame pack all it's components by respecting the sizes if possible.
         this.pack();// view eller draw?
         // Get the computer screen resolution
@@ -69,4 +67,5 @@ public class CarView extends JFrame {
         // Make sure the frame exits when "x" is pressed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
 }
