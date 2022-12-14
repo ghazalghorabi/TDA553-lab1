@@ -3,9 +3,10 @@ import javax.swing.*;
 
 public class GasController {
 
-    public int gasAmount = 0;
+    int gasAmount = 0;
     JLabel gasLabel = new JLabel("Amount of gas");
     JButton gasButton = new JButton("Gas"); // GasController
+
     private double updatedGas;
 
     

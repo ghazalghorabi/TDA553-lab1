@@ -1,5 +1,6 @@
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public abstract class Car implements Movable {
     private int nrDoors; // Number of doors on the car
@@ -21,6 +22,7 @@ public abstract class Car implements Movable {
         this.xPos = xPos; // the car's x position
         this.yPos = yPos; // the car's y position
         this.currentcardirection = currentcardirection; // startvärdet
+
     }
 
     public int getNrDoors() {
@@ -121,7 +123,7 @@ public abstract class Car implements Movable {
         } else if (currentcardirection == Direction.EAST) {
             xPos -= 1;
         }
-
+        //NotifySubscriber();
     }
 
     public void turnLeft() {

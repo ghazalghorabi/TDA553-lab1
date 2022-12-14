@@ -3,30 +3,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
 
-
 //Single responsibility princible: ha allt som handlar om controller här
 
-
 public class CarController extends JPanel {// denna är kvar
-   
+
     CarView frame; // en frame för controller
+    
     BrakeController brakeController = new BrakeController();
     GasController gasController = new GasController();
     SpinnerController gasSpinner = new SpinnerController();
 
-
-    
-
     JPanel gasPanel = new JPanel();
-    JPanel controlPanel = new JPanel();
+    public JPanel controlPanel = new JPanel();
     JButton turboOnButton = new JButton("Saab Turbo on");
     JButton turboOffButton = new JButton("Saab Turbo off");
     JButton liftBedButton = new JButton("Scania Lift Bed");
     JButton lowerBedButton = new JButton("Lower Lift Bed");
-    JButton startButton = new JButton("Start all cars");
-    JButton stopButton = new JButton("Stop all cars");
+    
 
-   
+    
+        
+
+       
 
     // la till:
     public void actionListener() {
@@ -55,30 +53,21 @@ public class CarController extends JPanel {// denna är kvar
             }
         });
     }
-    
 
-    private void initComponents(String title) {// should stay :)
+    public void initComponents(String title) {// should stay :)
+
+        controlPanel.add(gasController.gasButton, 0); // GasController
+        controlPanel.add(turboOnButton, 1);
+        controlPanel.add(liftBedButton, 2);
+        controlPanel.add(brakeController.brakeButton, 3);// BrakeController
+        controlPanel.add(turboOffButton, 4);
+        controlPanel.add(lowerBedButton, 5);
+
+        // gasPanel.setLayout(new BorderLayout()); // draw
         
-    
-    controlPanel.add(gasController.gasButton, 0); // GasController
-    controlPanel.add(turboOnButton, 1);
-    controlPanel.add(liftBedButton, 2);
-    controlPanel.add(brakeController.brakeButton, 3);// BrakeController
-    controlPanel.add(turboOffButton, 4);
-    controlPanel.add(lowerBedButton, 5);
-    
-   
+        gasPanel.add(gasController.gasLabel, BorderLayout.PAGE_START);
+        gasPanel.add(gasSpinner.gasSpinner, BorderLayout.PAGE_END);
 
-    
-    //gasPanel.setLayout(new BorderLayout()); // draw
-      
-    gasPanel.add(gasController.gasLabel, BorderLayout.PAGE_START);
-
-    gasPanel.add(gasController.gasButton, 0);
-    gasPanel.setLayout(new BorderLayout()); // draw
-    gasPanel.add(gasController.gasLabel, BorderLayout.PAGE_START);
-    gasPanel.add(gasSpinner.gasSpinner, BorderLayout.PAGE_END); // view 
-    gasPanel.add(gasSpinner.gasSpinner, BorderLayout.PAGE_END);
-
-}
+        
+    }
 }

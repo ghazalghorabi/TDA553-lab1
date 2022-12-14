@@ -1,3 +1,4 @@
+/* 
 public class Subscriber {
     public Subscriber(){
         
@@ -6,3 +7,4 @@ public class Subscriber {
         sub.move();
     }
 }
+*/

@@ -4,6 +4,8 @@ import java.util.Timer;
 import java.awt.event.ActionEvent;
     //just tesing nothing important
 public class Main {
+
+    
     public static ArrayList<Car> cars;
     public static void main(String[] args) {
         Saab95 car1 = new Saab95();
@@ -17,9 +19,10 @@ public class Main {
         cars.add(car4);
         //CarModel model = new CarModel(cars);
         CarController cc = new CarController();
-        
+        cc.initComponents("hej");
+
         // Start a new view and send a reference of self
-        cc.frame = new CarView(cc ,cc , cc); //VIEW
+        cc.frame = new CarView(cc.controlPanel); //VIEW
         
         
         

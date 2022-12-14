@@ -1,17 +1,7 @@
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
- * This class represents the full view of the MVC pattern of your car simulator.
- * It initializes with being center on the screen and attaching it's controller
- * in it's state.
- * It communicates with the Controller by calling methods of it when an action
- * fires of in
- * each of it's components.
  * TODO: Write more actionListeners and wire the rest of the buttons
  **/
 public class CarView extends JFrame {
@@ -20,15 +10,17 @@ public class CarView extends JFrame {
     // vissa saker ska vara kvar ändå för illustration i programmet
     private static final int X = 800;// 800
     private static final int Y = 400;
-    public static JPanel panel;
-    public static JPanel stopButton;
-    public static JPanel startButton;
+    public JPanel panel;
+    public JButton stopButton;
+    public JButton startButton;
     DrawPanel drawPanel = new DrawPanel(X, Y - 240);
 
     // public DrawPanel drawPanel;
 
     // Constructor
-    public CarView(JPanel controlPanel, JPanel startButton, JPanel stopButton) { // ??
+    public CarView(JPanel controlPanel) { // ??
+        this.startButton = new JButton("START");
+        this.stopButton = new JButton("STOP");
 
         this.setTitle("Amazing Pink Cars");
         this.setPreferredSize(new Dimension(X, Y));
@@ -46,6 +38,7 @@ public class CarView extends JFrame {
 
         controlPanel.setBackground(Color.CYAN);// knappbakgrund
         controlPanel.setLayout(new GridLayout(2, 4));
+
 
         startButton.setBackground(Color.green); // Färgens knapp
         startButton.setForeground(Color.BLACK);// färgens text
