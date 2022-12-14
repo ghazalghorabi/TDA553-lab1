@@ -17,8 +17,20 @@ public class Main {
         cars.add(car4);
         //CarModel model = new CarModel(cars);
         CarController cc = new CarController();
+        
         // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc); //VIEW
+        cc.frame = new CarView("CarSim 1.0",cc ,cc , cc); //VIEW
+
+        cc.frame.add(cc);
+        
+        
+
+        
+        //cars.move);
+        //for (Car car : Main.cars) { 
+          //  car.gas(amount);
+        //}
+        
         for (Car car : cars){
             if (car.equals(car2)){
                 System.out.println(car2.getmodelName());

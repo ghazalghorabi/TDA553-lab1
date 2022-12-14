@@ -1,9 +1,6 @@
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 public class SpinnerController {
@@ -12,12 +9,6 @@ public class SpinnerController {
     
     
     public SpinnerController(){
-    
-
-        
-    
-    
-
     SpinnerModel spinnerModel = // GasAmount, i en egen controller ? vara i en egen klass, can contoller spinner
     // klass
     new SpinnerNumberModel(0, // initial value

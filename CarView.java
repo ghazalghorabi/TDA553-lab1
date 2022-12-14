@@ -14,37 +14,46 @@ import java.awt.event.ActionListener;
  * each of it's components.
  * TODO: Write more actionListeners and wire the rest of the buttons
  **/
-public class CarView {
+public class CarView extends JFrame {
     // The controller member, denna ska vara i controller, där man har olika knappar
     // för olika situationer
     // vissa saker ska vara kvar ändå för illustration i programmet
-
-    /*CarController carC;// controller
+    private static final int X = 800;// 800
+    private static final int Y = 400;
+	public static JPanel panel;
+    public static JPanel stopButton;
+	public static JPanel startButton;
     DrawPanel drawPanel = new DrawPanel(X, Y - 240);
-    JPanel controlPanel = new JPanel();
-    JPanel gasPanel = new JPanel();
-    JSpinner gasSpinner = new JSpinner();
-    int gasAmount = 0;
-    JLabel gasLabel = new JLabel("Amount of gas");
-    JButton gasButton = new JButton("Gas"); // GasController
-    JButton brakeButton = new JButton("Brake"); // BrakeController
-    JButton turboOnButton = new JButton("Saab Turbo on");
-    JButton turboOffButton = new JButton("Saab Turbo off");
-    JButton liftBedButton = new JButton("Scania Lift Bed");
-    JButton lowerBedButton = new JButton("Lower Lift Bed");
-    JButton startButton = new JButton("Start all cars");
-    JButton stopButton = new JButton("Stop all cars");*/
+
+	//public DrawPanel drawPanel;
 
     // Constructor
-    public CarView(String framename) { // ??
+    public CarView(String framename, JPanel controlPanel, JPanel startButton, JPanel stopButton) { // ??
         
-        initComponents(framename);
-    
+        this.setTitle("Amazing Pink Cars");
+        this.setPreferredSize(new Dimension(X, Y));
+        this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        this.add(drawPanel);
+        
+        controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200)); // delegera? metod för kodduplicering
+        this.add(controlPanel);
 
+        startButton.setPreferredSize(new Dimension(X / 5 - 15, 200)); // delegera? metod för kodduplicering
+        this.add(startButton);
+
+        stopButton.setPreferredSize(new Dimension(X / 5 - 15, 200));// delegera? metod för kodduplicering
+        this.add(stopButton);
+
+        controlPanel.setBackground(Color.CYAN);// knappbakgrund
+        controlPanel.setLayout(new GridLayout(2, 4));
+
+
+        startButton.setBackground(Color.green); // Färgens knapp
+        startButton.setForeground(Color.BLACK);// färgens text
+       
     
-    // TODO: Take a good look and make sure you understand how these methods and
-    // components work
-   
+        stopButton.setBackground(Color.red);
+        stopButton.setForeground(Color.black);
         
         // This actionListener is for the gas button only!!!
         // TODO: Create more for each component as necessary
