@@ -11,55 +11,36 @@ public class CarView extends JFrame {
     private static final int X = 800;// 800
     private static final int Y = 400;
     public JPanel panel;
-    public JButton stopButton;
-    public JButton startButton;
+
     DrawPanel drawPanel = new DrawPanel(X, Y - 240);
 
     // public DrawPanel drawPanel;
 
     // Constructor
-    public CarView(JPanel controlPanel, JPanel gasPanel) { // ??
-        this.startButton = new JButton("START");
-        this.stopButton = new JButton("STOP");
+    public CarView() { // ??
 
-      
-        this.setTitle("Amazing Cars");
-        this.setPreferredSize(new Dimension(X, Y));
-        this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-        this.add(drawPanel);
-
-        controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200)); // delegera? metod för kodduplicering
-        this.add(controlPanel);
-
-        startButton.setPreferredSize(new Dimension(X / 5 - 15, 200)); // delegera? metod för kodduplicering
-        this.add(startButton);
-
-        stopButton.setPreferredSize(new Dimension(X / 5 - 15, 200));// delegera? metod för kodduplicering
-        this.add(stopButton);
-
-        controlPanel.setBackground(Color.CYAN);// knappbakgrund
-        controlPanel.setLayout(new GridLayout(2, 4));
-
-
-        startButton.setBackground(Color.green); // Färgens knapp
-        startButton.setForeground(Color.BLACK);// färgens text
-
-        stopButton.setBackground(Color.red);
-        stopButton.setForeground(Color.black);
+        setTitle("Amazing Cars");
+        setPreferredSize(new Dimension(X, Y));
+        setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        add(drawPanel);
+        add(CarController.controlPanel);
+        add(CarController.startButton);
+        add(CarController.stopButton);
+        
 
         // This actionListener is for the gas button only!!!
         // TODO: Create more for each component as necessary
 
         // Make the frame pack all it's components by respecting the sizes if possible.
-        this.pack();// view eller draw?
+        pack();// view eller draw?
         // Get the computer screen resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         // Center the frame
-        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+        setLocation(dim.width / 2 - getSize().width / 2, dim.height / 2 - getSize().height / 2);
         // Make the frame visible
-        this.setVisible(true);
+        setVisible(true);
         // Make sure the frame exits when "x" is pressed
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 }

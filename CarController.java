@@ -7,24 +7,21 @@ import java.awt.*;
 
 public class CarController extends JPanel {// denna är kvar
 
+    private static final int X = 800;// 800
     CarView frame; // en frame för controller
-    
+
     BrakeController brakeController = new BrakeController();
     GasController gasController = new GasController();
     SpinnerController gasSpinner = new SpinnerController();
 
     JPanel gasPanel = new JPanel();
-    JPanel controlPanel = new JPanel();
+    static JPanel controlPanel = new JPanel();
     JButton turboOnButton = new JButton("Saab Turbo on");
     JButton turboOffButton = new JButton("Saab Turbo off");
     JButton liftBedButton = new JButton("Scania Lift Bed");
     JButton lowerBedButton = new JButton("Lower Lift Bed");
-    
-
-    
-        
-
-       
+    static JButton startButton = new JButton("START");
+    static JButton stopButton = new JButton("STOP");
 
     // la till:
     public void actionListener() {
@@ -63,8 +60,30 @@ public class CarController extends JPanel {// denna är kvar
         controlPanel.add(turboOffButton, 4);
         controlPanel.add(lowerBedButton, 5);
         controlPanel.add(gasSpinner, BorderLayout.PAGE_END);
-       
+
+    }
+
+    public CarController() {
+        controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200)); // delegera? metod för kodduplicering
+        add(controlPanel);
+
+        startButton.setPreferredSize(new Dimension(X / 5 - 15, 200)); // delegera? metod för kodduplicering
+        add(startButton);
+
+        stopButton.setPreferredSize(new Dimension(X / 5 - 15, 200));// delegera? metod för kodduplicering
+        add(stopButton);
+
+        controlPanel.setBackground(Color.CYAN);// knappbakgrund
+        controlPanel.setLayout(new GridLayout(2, 4));
+
+        startButton.setBackground(Color.green); // Färgens knapp
+        startButton.setForeground(Color.BLACK);// färgens text
+
+        stopButton.setBackground(Color.red);
+        stopButton.setForeground(Color.black);
 
         
+        
+
     }
 }

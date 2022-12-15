@@ -11,18 +11,17 @@ public class Main {
         Saab95 car1 = new Saab95();
         Volvo240 car2 = new Volvo240();
         Scania car3 = new Scania();
-        CarTransporter car4 = new CarTransporter(null, 10, 0, 0);
         cars = new ArrayList<Car>();
         cars.add(car1);
         cars.add(car2);
         cars.add(car3);
-        cars.add(car4);
+        
         //CarModel model = new CarModel(cars);
         CarController cc = new CarController();
         cc.initComponents("hej");
 
         // Start a new view and send a reference of self
-        cc.frame = new CarView(cc.controlPanel, cc.gasPanel); //VIEW
+        cc.frame = new CarView(); //VIEW
         
         
         
