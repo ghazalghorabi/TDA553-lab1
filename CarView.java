@@ -18,11 +18,12 @@ public class CarView extends JFrame {
     // public DrawPanel drawPanel;
 
     // Constructor
-    public CarView(JPanel controlPanel) { // ??
+    public CarView(JPanel controlPanel, JPanel gasPanel) { // ??
         this.startButton = new JButton("START");
         this.stopButton = new JButton("STOP");
 
-        this.setTitle("Amazing Pink Cars");
+      
+        this.setTitle("Amazing Cars");
         this.setPreferredSize(new Dimension(X, Y));
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         this.add(drawPanel);

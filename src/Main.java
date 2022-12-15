@@ -22,7 +22,7 @@ public class Main {
         cc.initComponents("hej");
 
         // Start a new view and send a reference of self
-        cc.frame = new CarView(cc.controlPanel); //VIEW
+        cc.frame = new CarView(cc.controlPanel, cc.gasPanel); //VIEW
         
         
         

@@ -14,7 +14,7 @@ public class CarController extends JPanel {// denna är kvar
     SpinnerController gasSpinner = new SpinnerController();
 
     JPanel gasPanel = new JPanel();
-    public JPanel controlPanel = new JPanel();
+    JPanel controlPanel = new JPanel();
     JButton turboOnButton = new JButton("Saab Turbo on");
     JButton turboOffButton = new JButton("Saab Turbo off");
     JButton liftBedButton = new JButton("Scania Lift Bed");
@@ -62,11 +62,8 @@ public class CarController extends JPanel {// denna är kvar
         controlPanel.add(brakeController.brakeButton, 3);// BrakeController
         controlPanel.add(turboOffButton, 4);
         controlPanel.add(lowerBedButton, 5);
-
-        // gasPanel.setLayout(new BorderLayout()); // draw
-        
-        gasPanel.add(gasController.gasLabel, BorderLayout.PAGE_START);
-        gasPanel.add(gasSpinner.gasSpinner, BorderLayout.PAGE_END);
+        controlPanel.add(gasSpinner, BorderLayout.PAGE_END);
+       
 
         
     }
