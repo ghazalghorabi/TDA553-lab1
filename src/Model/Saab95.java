@@ -2,13 +2,10 @@
 import java.awt.*;
 
 public class Saab95 extends Car{
-
-   // public boolean turboOn;
    Turbo t  = new Turbo();
     
     public Saab95(){
-        super(2, 125, 0 ,Color.red, "Saab95", 50, 50, Direction.NORTH);
-        //turboOn = false;
+        super(2, 125, 0 ,Color.red, "Saab95", 50, 50, Direction.WEST);
         speedFactor();
     }
 

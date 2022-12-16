@@ -3,7 +3,7 @@ import java.util.Stack;
 
 
 
-public class CarShop implements IContent, IDistance { //remove IContent
+public class CarShop implements IContent, IDistance { 
 
 Loading l = new Loading();
 Distance d = new Distance();

@@ -17,15 +17,14 @@ public Truck(int nrDoors, double enginePower, double currentSpeed, Color color, 
     }
 
     public void openPlatform(){
-        platform.openPlatform(); //delegarar openplatform till platform; 
+        platform.openPlatform(); 
     }
     public void closePlatform(){
-        platform.closePlatform(); //delegarar closeplatform till platform; 
+        platform.closePlatform(); 
     }
 
     // raiseplatform , gas, move 
     public void raiseplatform(double platformAngle) throws Exception{
-
         if (platform.getPlatformAngle()> 0 && getCurrentSpeed()==0){  
             platform.openPlatform(); 
         }else if(getCurrentSpeed() > 0){

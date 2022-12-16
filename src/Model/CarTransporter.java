@@ -3,7 +3,7 @@
 import java.awt.Color;
 import java.util.*;
 
-public class CarTransporter extends Truck implements IContent, IDistance { // remove implent icontent
+public class CarTransporter extends Truck implements IContent, IDistance {
     Loading l = new Loading();
     Distance d = new Distance();
 
@@ -20,7 +20,7 @@ public class CarTransporter extends Truck implements IContent, IDistance { // re
         this.radius = radius;
         this.loadedCars = loadedCars;
         this.platform = new Platform();
-        this.carAmount = carAmount; // this never changes, changed this to 2 on purpose!
+        this.carAmount = carAmount;
         this.unloadAreaX = unloadAreaX;
         this.unloadAreaY = unloadAreaY;
 

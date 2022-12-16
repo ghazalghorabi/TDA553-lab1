@@ -3,15 +3,11 @@ import java.awt.*;
 import java.util.List;
 
 public class CarView extends JFrame {
-    // The controller member, denna ska vara i controller, där man har olika knappar
-    // för olika situationer
-    // vissa saker ska vara kvar ändå för illustration i programmet
-    private static final int X = 800;// 800
+    private static final int X = 800;
     private static final int Y = 400;
     public DrawPanel drawPanel;
 
-    // Constructor
-    public CarView(List<Car> cars) { // Dependency injection
+    public CarView(List<Car> cars) { 
 
         this.drawPanel = new DrawPanel(cars, X, Y - 240);
         setTitle("Amazing Cars");
@@ -19,7 +15,7 @@ public class CarView extends JFrame {
         setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         add(drawPanel);
 
-        pack();// view eller draw?
+        pack();
         // Get the computer screen resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         // Center the frame

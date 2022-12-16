@@ -3,11 +3,16 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class BrakeController {
     private int brakeAmount = 0;
-    private JButton brakeButton = new JButton("Brake"); // BrakeController
+    private JButton brakeButton = new JButton("Brake"); 
 
-    public void actionListener() {
+    public BrakeController(){
+        initialize();
+    }
+
+    private void initialize(){
 
         brakeButton.addActionListener(new ActionListener() {
             @Override
@@ -23,9 +28,7 @@ public class BrakeController {
         });
     }
 
-
-    
-    public JButton getbrakeButton(){
+    public JButton getbrakeButton() {
         return brakeButton;
     }
 }

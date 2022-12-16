@@ -23,22 +23,22 @@ public class CarController extends JPanel {
 
     private void initComponents(String title) {
 
-        controlPanel.add(gasController.getGaspanel(), 0); // GasController
+        controlPanel.add(gasController.getGaspanel(), 0); 
         controlPanel.add(turboOnButton, 1);
         controlPanel.add(liftBedButton, 2);
-        controlPanel.add(brakeController.getbrakeButton(), 3);// BrakeController
+        controlPanel.add(brakeController.getbrakeButton(), 3);
         controlPanel.add(turboOffButton, 4);
         controlPanel.add(lowerBedButton, 5);
 
         controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200));
         add(controlPanel);
-        controlPanel.setBackground(Color.CYAN);// knappbakgrund
+        controlPanel.setBackground(Color.CYAN);
         controlPanel.setLayout(new GridLayout(2, 4));
 
         startButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
         add(startButton);
-        startButton.setBackground(Color.green); // Färgens knapp
-        startButton.setForeground(Color.BLACK);// färgens text
+        startButton.setBackground(Color.green); 
+        startButton.setForeground(Color.BLACK);
 
         stopButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
         add(stopButton);
