@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
 /**
  * TODO: Write more actionListeners and wire the rest of the buttons
@@ -10,28 +11,23 @@ public class CarView extends JFrame {
     // vissa saker ska vara kvar ändå för illustration i programmet
     private static final int X = 800;// 800
     private static final int Y = 400;
+    public DrawPanel drawPanel;
     public JPanel panel;
 
-    DrawPanel drawPanel = new DrawPanel(X, Y - 240);
+    
 
     // public DrawPanel drawPanel;
 
     // Constructor
-    public CarView() { // ??
+    public CarView(List<Car> cars) { // ??
 
+        this.drawPanel = new DrawPanel(cars, X, Y - 240);
         setTitle("Amazing Cars");
         setPreferredSize(new Dimension(X, Y));
         setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         add(drawPanel);
-       // add(controller);
-       // add(CarController.startButton);
-        //add(CarController.stopButton);
-        
-
-        // This actionListener is for the gas button only!!!
-        // TODO: Create more for each component as necessary
-
-        // Make the frame pack all it's components by respecting the sizes if possible.
+    
+    
         pack();// view eller draw?
         // Get the computer screen resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();

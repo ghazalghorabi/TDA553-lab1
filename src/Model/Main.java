@@ -1,6 +1,8 @@
 
 
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.Timer;
 
 
@@ -11,7 +13,7 @@ import java.awt.event.ActionListener;
 public class Main {
 
     
-    public static ArrayList<Car> cars;
+    public static List<Car> cars;
     public static CarView view;
     public static final int delay=50;
     private static Timer timer;
@@ -31,7 +33,7 @@ public class Main {
 
         // Start a new view and send a reference of self
         //cc.frame = 
-        view = new CarView(); //VIEW
+        view = new CarView(cars); //VIEW
         view.add(cc);
 
         timer = new Timer(delay,new TimerListener());
@@ -57,7 +59,7 @@ public static class TimerListener implements ActionListener {
                 int x = (int) Math.round(car.getXPos());// VIEW visar vart bilarna är
                 int y = (int) Math.round(car.getYPos());
                 car.move();
-                drawPanel.moveit(car, x, y);
+                //drawPanel.moveit(car, x, y);
                 //repaint() calls the paintComponent method of the panel
                 drawPanel.repaint();  
             }
