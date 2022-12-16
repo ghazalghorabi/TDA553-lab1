@@ -1,3 +1,5 @@
+
+
 public class Distance {
     public double calcDistance(IDistance n, Car m) {
         int xDif = Math.abs(m.getXPos() - n.getXPos()); // Using Pythagoras to get DISTANCE from CarShop to car

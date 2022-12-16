@@ -1,10 +1,9 @@
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class TimerListener implements ActionListener {
-    DrawPanel drawPanel;
-    
+    private DrawPanel drawPanel;
 
     public void actionPerformed(ActionEvent e) { // user input (actionlistner "button")
             for (Car car : Main.cars) {
@@ -12,8 +11,7 @@ public class TimerListener implements ActionListener {
                 int y = (int) Math.round(car.getYPos());
                 drawPanel.moveit(x, y);
                 // repaint() calls the paintComponent method of the panel
-                drawPanel.repaint();
-                
+                drawPanel.repaint();  
             }
         }
     }

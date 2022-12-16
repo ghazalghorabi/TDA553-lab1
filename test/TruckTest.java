@@ -8,6 +8,7 @@ import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 
 
+
 public class TruckTest {
 @Test
   public void PlatformAngleIntervaltest(){
@@ -55,7 +56,7 @@ public class TruckTest {
   }
   @Test
   public void lowerPlatformTransporter() throws Exception{
-    CarTransporter carTransporter = new CarTransporter(null, 10, 0, 0);
+    CarTransporter carTransporter = new CarTransporter(null, 10, 0, 0, 0);
     carTransporter.setCurrentSpeed(10);
     carTransporter.closePlatform();
     assertThrows(Exception.class,()-> carTransporter.lowerplatform(carTransporter.getPlatformAngle()));

@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.Test;
 
 
+
 public class CarTest {
   @Test //testar start direction, TESTET UTGÅR FRÅN ATT BILARNA HAR START DIRECTION NORTH
   public void start_direction_test() {

@@ -1,4 +1,5 @@
 import java.awt.Color;
+
 public class Truck extends Car {
 Turbo t  = new Turbo();
 Platform platform= new Platform(); 

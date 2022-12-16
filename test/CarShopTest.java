@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+
 public class CarShopTest {
     @Test
     public void calc_distance_test() {

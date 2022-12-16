@@ -1,3 +1,5 @@
+
+
 import java.awt.Color;
 import java.util.*;
 
@@ -12,13 +14,13 @@ public class CarTransporter extends Truck implements IContent, IDistance { // re
     private int unloadAreaX;
     private int unloadAreaY;
 
-    public CarTransporter(Stack<Car> loadedCars, double radius, int unloadAreaX, int unloadAreaY) {
+    public CarTransporter(Stack<Car> loadedCars, double radius, int carAmount, int unloadAreaX, int unloadAreaY) {
         super(2, 110, 0, Color.BLUE, "car transporter", 0, 0, Direction.NORTH);
 
         this.radius = radius;
         this.loadedCars = loadedCars;
         this.platform = new Platform();
-        this.carAmount = 2; // this never changes, changed this to 2 on purpose!
+        this.carAmount = carAmount; // this never changes, changed this to 2 on purpose!
         this.unloadAreaX = unloadAreaX;
         this.unloadAreaY = unloadAreaY;
 
