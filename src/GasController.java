@@ -14,33 +14,37 @@ public class GasController {
     private JButton gasButton = new JButton("Gas"); //GasController
     
     private JPanel gasPanel = new JPanel(); 
-    private JSpinner gasSpinner = new JSpinner();
-    private double updatedGas;
+    private JSpinner gasSpinner = new SpinnerController();
+    private static double updatedGas;
 
     public GasController(){
         initialize();
-   
     }
-   
-	public void actionListener() {
-       gasButton.addActionListener(new ActionListener() {
+
+    private void initialize(){
+        gasSpinner.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e ) {
+                gasAmount = (int) ((JSpinner)e.getSource()).getValue();
+            }
+        });
+
+        gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 for (Car cc : Main.cars) {
                     try {
-                        cc.gas(gasAmount);
+                        cc.gas(gasAmount / 100);
                     } catch (Exception e1) {
                         e1.printStackTrace();
                     }
                 }
             }
-       });}
+       });
 
-    private void initialize(){
-    
         gasPanel.setLayout(new BorderLayout()); // draw
         gasPanel.add(gasLabel, BorderLayout.PAGE_START);
         gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
+    
 
         gasPanel.add(gasButton, 0); 
         
@@ -51,7 +55,7 @@ public class GasController {
       //  this.gasAmount = updatedGas;   }
 
 
-    public double getUpdatedGas() {
+    public static double getUpdatedGas() {
         return updatedGas;
     }
 
@@ -66,8 +70,6 @@ public class GasController {
     public void setUpdatedGas(double updatedGas) {
         this.updatedGas = updatedGas;
     }
-
-
 
     // Calls the gas method for each car once
     public void updateGasAmount(int amount, double updatedGas) throws Exception { 

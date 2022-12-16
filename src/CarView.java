@@ -12,14 +12,9 @@ public class CarView extends JFrame {
     private static final int X = 800;// 800
     private static final int Y = 400;
     public DrawPanel drawPanel;
-    public JPanel panel;
-
-    
-
-    // public DrawPanel drawPanel;
-
+   
     // Constructor
-    public CarView(List<Car> cars) { // ??
+    public CarView(List<Car> cars) { // Dependency injection
 
         this.drawPanel = new DrawPanel(cars, X, Y - 240);
         setTitle("Amazing Cars");

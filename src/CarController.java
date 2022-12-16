@@ -1,6 +1,5 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import java.awt.*;
 
 //Single responsibility princible: ha allt som handlar om controller här
@@ -42,10 +41,9 @@ public class CarController extends JPanel {// denna är kvar
         controlPanel.add(gasController.getGaspanel(), 0); // GasController
         controlPanel.add(turboOnButton, 1);
         controlPanel.add(liftBedButton, 2);
-       // controlPanel.add(brakeController.brakebutton, 3);// BrakeController
-        controlPanel.add(turboOffButton, 3);
-        controlPanel.add(lowerBedButton, 4);
-        controlPanel.add(gasSpinner, BorderLayout.PAGE_END);
+        controlPanel.add(brakeController.getbrakeButton(), 3);// BrakeController
+        controlPanel.add(turboOffButton, 4);
+        controlPanel.add(lowerBedButton, 5);
 
         controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200)); // delegera? metod för kodduplicering
         add(controlPanel);

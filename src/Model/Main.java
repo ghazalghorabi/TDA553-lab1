@@ -50,7 +50,7 @@ public class Main {
         
 
 }
-
+//
 public static class TimerListener implements ActionListener {
     private DrawPanel drawPanel = view.drawPanel;
 
@@ -59,8 +59,15 @@ public static class TimerListener implements ActionListener {
                 int x = (int) Math.round(car.getXPos());// VIEW visar vart bilarna är
                 int y = (int) Math.round(car.getYPos());
                 car.move();
-                //drawPanel.moveit(car, x, y);
-                //repaint() calls the paintComponent method of the panel
+                //car.brake();
+                
+                try {
+					car.gas(GasController.getUpdatedGas());
+    
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+
                 drawPanel.repaint();  
             }
         }

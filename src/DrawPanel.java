@@ -40,7 +40,7 @@ public class DrawPanel extends JPanel{
     }
 
     // This method is called each time the panel updates/refreshes/repaints itself
-    // TODO: Change to suit your needs.
+    
     @Override
     protected void paintComponent(Graphics g) { // vi kanske ska ha denna i view??
         super.paintComponent(g);

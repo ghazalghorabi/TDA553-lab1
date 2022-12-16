@@ -118,15 +118,15 @@ public abstract class Car implements Movable {
     @Override
     public void move() {
         if (currentcardirection == Direction.NORTH) {
-            yPos -= 1;
+            yPos -= currentSpeed;
         } else if (currentcardirection == Direction.SOUTH) {
-            yPos += 1;
+            yPos += currentSpeed;
         } else if (currentcardirection == Direction.WEST) {
-            xPos += 1;
+            xPos += currentSpeed;
         } else if (currentcardirection == Direction.EAST) {
-            xPos -= 1;
+            xPos -= currentSpeed;
         }
-        //NotifySubscriber();
+        //NotifySubscriber();    
     }
 
     public void turnLeft() {
