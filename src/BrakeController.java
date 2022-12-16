@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class BrakeController {
-    // Subscriber subscriber = new Subscriber();
     private int brakeAmount = 0;
     private JButton brakeButton = new JButton("Brake"); // BrakeController
 

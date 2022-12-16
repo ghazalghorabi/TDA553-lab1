@@ -2,14 +2,10 @@ import javax.swing.*;
 
 import java.awt.*;
 
-//Single responsibility princible: ha allt som handlar om controller här
-
-public class CarController extends JPanel {// denna är kvar
+public class CarController extends JPanel {
     private BrakeController brakeController = new BrakeController();
     private GasController gasController = new GasController();
-    private SpinnerController gasSpinner = new SpinnerController();
 
-    //private JPanel gasPanel = new JPanel();
     private static JPanel controlPanel = new JPanel();
     private JButton turboOnButton = new JButton("Saab Turbo on");
     private JButton turboOffButton = new JButton("Saab Turbo off");
@@ -18,25 +14,14 @@ public class CarController extends JPanel {// denna är kvar
     private static JButton startButton = new JButton("START");
     private static JButton stopButton = new JButton("STOP");
 
-    public CarController( ){
-        
-       // this.controlPanel = controlPanel;
-        this.turboOnButton= turboOnButton;
-        this.turboOffButton= turboOffButton;
-        this.liftBedButton = liftBedButton;
-        this.lowerBedButton = lowerBedButton;
-        this.startButton = startButton;
-        this.stopButton = stopButton;
-        initComponents("hej");
+    public CarController() {
+
+        initComponents("ButtonDisplay");
     }
-    private static final int X = 800;// 800
-    //CarView frame; // en frame för controller
 
-   
-    // la till:
-    
+    private static final int X = 800;
 
-    private void initComponents(String title) {// should stay :)
+    private void initComponents(String title) {
 
         controlPanel.add(gasController.getGaspanel(), 0); // GasController
         controlPanel.add(turboOnButton, 1);
@@ -45,24 +30,20 @@ public class CarController extends JPanel {// denna är kvar
         controlPanel.add(turboOffButton, 4);
         controlPanel.add(lowerBedButton, 5);
 
-        controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200)); // delegera? metod för kodduplicering
+        controlPanel.setPreferredSize(new Dimension((X / 2) + 4, 200));
         add(controlPanel);
-
-        startButton.setPreferredSize(new Dimension(X / 5 - 15, 200)); // delegera? metod för kodduplicering
-        add(startButton);
-
-        stopButton.setPreferredSize(new Dimension(X / 5 - 15, 200));// delegera? metod för kodduplicering
-        add(stopButton);
-
         controlPanel.setBackground(Color.CYAN);// knappbakgrund
         controlPanel.setLayout(new GridLayout(2, 4));
 
+        startButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
+        add(startButton);
         startButton.setBackground(Color.green); // Färgens knapp
         startButton.setForeground(Color.BLACK);// färgens text
 
+        stopButton.setPreferredSize(new Dimension(X / 5 - 15, 200));
+        add(stopButton);
         stopButton.setBackground(Color.red);
         stopButton.setForeground(Color.black);
 
-        
     }
 }

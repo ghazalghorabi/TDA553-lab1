@@ -3,8 +3,6 @@ import java.util.ArrayList;
 import java.awt.*;
 
 
-
-
 public abstract class Car implements Movable {
     private int nrDoors; // Number of doors on the car
     private double enginePower; // Engine power of the car
@@ -83,7 +81,7 @@ public abstract class Car implements Movable {
     public void gas(double amount) throws Exception {
         if (amount >= 0 && amount <= 1) { // gas only accepts values in the interval [0,1]
             incrementSpeed(amount);
-        } else { // else error message
+        } else {
             throw new Exception("the amount is not in the interval");
         }
     }
@@ -95,19 +93,15 @@ public abstract class Car implements Movable {
     public void brake(double amount) throws Exception {
         if (amount >= 0 && amount <= 1) { // brake only accepts values in the interval [0,1]
             decrementSpeed(amount);
-        } else { // else error message
+        } else { 
             throw new Exception("the amount is not in the interval");
         }
 
     }
 
-    private void decrementSpeed(double amount) { // the max and min speed interval while braking
+    private void decrementSpeed(double amount) {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
-
-    /*public void setcurrentdirection(Direction currentcarDirection){
-        this.currentcardirection = currentcardirection;
-    }*/
 
     public Direction getcurrentcardirection() {
         return currentcardirection;
@@ -126,7 +120,6 @@ public abstract class Car implements Movable {
         } else if (currentcardirection == Direction.EAST) {
             xPos -= currentSpeed;
         }
-        //NotifySubscriber();    
     }
 
     public void turnLeft() {

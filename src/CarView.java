@@ -2,9 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-/**
- * TODO: Write more actionListeners and wire the rest of the buttons
- **/
 public class CarView extends JFrame {
     // The controller member, denna ska vara i controller, där man har olika knappar
     // för olika situationer
@@ -12,7 +9,7 @@ public class CarView extends JFrame {
     private static final int X = 800;// 800
     private static final int Y = 400;
     public DrawPanel drawPanel;
-   
+
     // Constructor
     public CarView(List<Car> cars) { // Dependency injection
 
@@ -21,8 +18,7 @@ public class CarView extends JFrame {
         setPreferredSize(new Dimension(X, Y));
         setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         add(drawPanel);
-    
-    
+
         pack();// view eller draw?
         // Get the computer screen resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();

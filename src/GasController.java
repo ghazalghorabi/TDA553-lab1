@@ -11,7 +11,7 @@ public class GasController {
 
     private int gasAmount = 0;
     private JLabel gasLabel = new JLabel("Amount of gas");
-    private JButton gasButton = new JButton("Gas"); //GasController
+    private JButton gasButton = new JButton("Gas"); 
     
     private JPanel gasPanel = new JPanel(); 
     private JSpinner gasSpinner = new SpinnerController();
@@ -41,7 +41,7 @@ public class GasController {
             }
        });
 
-        gasPanel.setLayout(new BorderLayout()); // draw
+        gasPanel.setLayout(new BorderLayout()); 
         gasPanel.add(gasLabel, BorderLayout.PAGE_START);
         gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
     
@@ -49,29 +49,16 @@ public class GasController {
         gasPanel.add(gasButton, 0); 
         
     }
-    
-
-    //public GasController(int updatedGas) {
-      //  this.gasAmount = updatedGas;   }
-
 
     public static double getUpdatedGas() {
         return updatedGas;
     }
 
-    public void SetGaspanel(){
-        this.gasPanel= gasPanel;
-    }
 
     public JPanel getGaspanel(){
         return gasPanel;
     }
 
-    public void setUpdatedGas(double updatedGas) {
-        this.updatedGas = updatedGas;
-    }
-
-    // Calls the gas method for each car once
     public void updateGasAmount(int amount, double updatedGas) throws Exception { 
         updatedGas = ((double) amount) / 100;
     }
